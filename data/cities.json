@@ -37,18 +37,6 @@
       "id": "98443197"
     },
     {
-      "id": "7fda",
-      "cityName": "Marchena",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-09-16T13:23:05.130Z",
-      "notes": "test",
-      "position": {
-        "lat": "37.34395908944491",
-        "lng": "-5.3173828125"
-      }
-    },
-    {
       "id": "876a",
       "cityName": "Merouana",
       "country": "Algeria",
@@ -58,6 +46,30 @@
       "position": {
         "lat": "35.6517169333161",
         "lng": "5.876312255859376"
+      }
+    },
+    {
+      "id": "0a6b",
+      "cityName": "Sidi Hosni",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2025-09-17T20:21:55.339Z",
+      "notes": "best",
+      "position": {
+        "lat": "35.531238419506394",
+        "lng": "1.4062900408505954"
+      }
+    },
+    {
+      "id": "2d65",
+      "cityName": "El Kharrouba",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2025-09-18T05:48:29.768Z",
+      "notes": "",
+      "position": {
+        "lat": "36.59198175038902",
+        "lng": "3.405572351959952"
       }
     }
   ]

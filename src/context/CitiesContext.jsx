@@ -10,9 +10,8 @@ const initialState = {
 };
 function reducer(state, action) {
   switch (action.type) {
-    case 'loading': {
+    case 'loading':
       return { ...state, isLoading: true };
-    }
     case 'cities/loaded':
       return { ...state, isLoading: false, cities: action.payLoad };
     case 'city/loaded':
@@ -22,6 +21,7 @@ function reducer(state, action) {
         ...state,
         isLoading: false,
         cities: [...state.cities, action.payLoad],
+        currentCity: action.payLoad,
       };
     case 'city/deleted':
       return {
@@ -42,9 +42,6 @@ function CitiesProvider({ children }) {
     reducer,
     initialState
   );
-  // const [cities, setCities] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [currentCity, setCurrentCity] = useState({});
 
   useEffect(() => {
     async function fetchCities() {
@@ -62,8 +59,10 @@ function CitiesProvider({ children }) {
     }
     fetchCities();
   }, []);
-
+  // load the city
   async function getCity(id) {
+    console.log(id, currentCity.id);
+    if (Number(id) === currentCity.id) return;
     dispatch({ type: 'loading' });
     try {
       const response = await fetch(`${BASE_URL}/cities/${id}`);
@@ -79,6 +78,7 @@ function CitiesProvider({ children }) {
       });
     }
   }
+  //create city
   async function createCity(newCity) {
     dispatch({ type: 'loading' });
     try {
@@ -96,6 +96,7 @@ function CitiesProvider({ children }) {
       });
     }
   }
+  // delete city
   async function deleteCity(id) {
     dispatch({ type: 'loading' });
     try {
